@@ -1,24 +1,55 @@
 [gd_scene format=3 uid="uid://cc48oqsnk08rg"]
 
+[ext_resource type="PackedScene" uid="uid://cbbg28kmafeqf" path="res://player/player.tscn" id="1_cc4m7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cc4m7"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_w28nb"]
+sky_material = SubResource("ProceduralSkyMaterial_cc4m7")
+
+[sub_resource type="Environment" id="Environment_du84n"]
+background_mode = 2
+sky = SubResource("Sky_w28nb")
+tonemap_mode = 2
+glow_enabled = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgp48"]
-albedo_color = Color(0.44973344, 0.48022127, 0.566885, 1)
+albedo_color = Color(0.3039459, 0.46591538, 0.81198364, 1)
 
 [node name="Node3D" type="Node3D" unique_id=508304723]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=809299972]
+environment = SubResource("Environment_du84n")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1193546293]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
 [node name="platform1" type="CSGBox3D" parent="." unique_id=483219520]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, 0)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -5, 0)
+size = Vector3(8, 10, 8)
 material = SubResource("StandardMaterial3D_lgp48")
 
 [node name="bridge1" type="CSGBox3D" parent="." unique_id=69860412]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -2.493042)
-size = Vector3(1, 1, 0.493042)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -14.493042)
+size = Vector3(3, 1, 1)
 material = SubResource("StandardMaterial3D_lgp48")
 
-[node name="bridge2" type="CSGBox3D" parent="." unique_id=1263493992]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -4.493042)
-size = Vector3(1, 1, 0.493042)
+[node name="bridge2" type="CSGBox3D" parent="." unique_id=1294403683]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -20.493042)
+size = Vector3(3, 1, 1)
+material = SubResource("StandardMaterial3D_lgp48")
+
+[node name="bridge3" type="CSGBox3D" parent="." unique_id=1614140555]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -26.493042)
+size = Vector3(3, 1, 1)
 material = SubResource("StandardMaterial3D_lgp48")
 
 [node name="platform2" type="CSGBox3D" parent="." unique_id=1754929961]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -7)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -6, -40)
+size = Vector3(8, 12, 8)
 material = SubResource("StandardMaterial3D_lgp48")
+
+[node name="CharacterBody3D" parent="." unique_id=244230320 instance=ExtResource("1_cc4m7")]
