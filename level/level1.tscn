@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cc48oqsnk08rg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgp48"]
+albedo_color = Color(0.44973344, 0.48022127, 0.566885, 1)
+
+[node name="Node3D" type="Node3D" unique_id=508304723]
+
+[node name="platform1" type="CSGBox3D" parent="." unique_id=483219520]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, 0)
+material = SubResource("StandardMaterial3D_lgp48")
+
+[node name="bridge1" type="CSGBox3D" parent="." unique_id=69860412]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -2.493042)
+size = Vector3(1, 1, 0.493042)
+material = SubResource("StandardMaterial3D_lgp48")
+
+[node name="bridge2" type="CSGBox3D" parent="." unique_id=1263493992]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -4.493042)
+size = Vector3(1, 1, 0.493042)
+material = SubResource("StandardMaterial3D_lgp48")
+
+[node name="platform2" type="CSGBox3D" parent="." unique_id=1754929961]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -7)
+material = SubResource("StandardMaterial3D_lgp48")
