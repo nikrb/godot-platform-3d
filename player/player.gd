@@ -3,7 +3,6 @@ extends CharacterBody3D
 const ROTATION_SPEED_X = 0.5
 const ROTATION_SPEED_Y = 0.2
 
-# step 3
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -18,7 +17,6 @@ func _unhandled_input(event):
 		%Camera3D.rotation_degrees.x = clamp(
 			$Camera3D.rotation_degrees.x, -80, 80
 		)
-	# step 3
 	# project > settings > input map > show predefined actions	
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
