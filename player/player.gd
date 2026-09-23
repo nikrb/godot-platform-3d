@@ -23,6 +23,7 @@ func _unhandled_input(event):
 	# project > settings > input map > show predefined actions	
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().quit()
 
 #step 4
 # add input actions
