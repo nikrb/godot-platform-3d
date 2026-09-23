@@ -36,14 +36,11 @@ func _physics_process(delta):
 	
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
-	
-	# step1 add jump input action in project settings
 	# 2 ways to check for input in godot
 	# 1. use the input singleton like here
 	# 2. unhandled_input above is more efficient for mouse movement
 	#	and UI events
 	velocity.y -= 20*delta
-	# step 2 add is_on_floor - CHECK "use collision" is true for platforms!
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = 10.0
 	
