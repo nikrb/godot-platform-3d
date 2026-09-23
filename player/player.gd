@@ -3,7 +3,6 @@ extends CharacterBody3D
 const ROTATION_SPEED_X = 0.5
 const ROTATION_SPEED_Y = 0.2
 
-#step 4
 const SPEED = 5.5	# metres per second
 
 func _ready():
@@ -25,7 +24,6 @@ func _unhandled_input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().quit()
 
-#step 4
 # add input actions
 func _physics_process(delta):
 	var input_dir_2d = Input.get_vector(
