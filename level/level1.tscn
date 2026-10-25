@@ -10,13 +10,16 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_cc4m7")
 
 [sub_resource type="Environment" id="Environment_du84n"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.36370835, 0.48954636, 0.739343, 1)
 sky = SubResource("Sky_w28nb")
+ambient_light_source = 2
+ambient_light_color = Color(0.7859148, 0.70436525, 0.44616503, 1)
 tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgp48"]
-albedo_color = Color(0.3039459, 0.46591538, 0.81198364, 1)
+albedo_color = Color(0.43529412, 0.46666667, 0.47058824, 1)
 
 [node name="Node3D" type="Node3D" unique_id=508304723]
 
