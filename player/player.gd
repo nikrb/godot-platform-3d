@@ -36,6 +36,7 @@ func _physics_process(delta):
 	
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
+	
 	# 2 ways to check for input in godot
 	# 1. use the input singleton like here
 	# 2. unhandled_input above is more efficient for mouse movement
