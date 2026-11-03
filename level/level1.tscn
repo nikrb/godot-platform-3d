@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cc48oqsnk08rg"]
 
 [ext_resource type="PackedScene" uid="uid://cbbg28kmafeqf" path="res://player/player.tscn" id="1_cc4m7"]
+[ext_resource type="Material" uid="uid://ccbbjvgrf0ves" path="res://level/platform.tres" id="1_w28nb"]
+[ext_resource type="Material" uid="uid://dtfwaj5aj41bi" path="res://level/bridge.tres" id="2_du84n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cc4m7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,9 +20,6 @@ ambient_light_color = Color(0.7859148, 0.70436525, 0.44616503, 1)
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgp48"]
-albedo_color = Color(0.43529412, 0.46666667, 0.47058824, 1)
-
 [node name="Node3D" type="Node3D" unique_id=508304723]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=809299972]
@@ -30,34 +29,103 @@ environment = SubResource("Environment_du84n")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="platform1" type="CSGBox3D" parent="." unique_id=483219520]
+[node name="PlatformsNode3D" type="Node3D" parent="." unique_id=1458130234]
+
+[node name="platform1" type="CSGBox3D" parent="PlatformsNode3D" unique_id=483219520]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -5, 0)
 use_collision = true
 size = Vector3(8, 10, 8)
-material = SubResource("StandardMaterial3D_lgp48")
+material = ExtResource("1_w28nb")
 
-[node name="bridge1" type="CSGBox3D" parent="." unique_id=69860412]
+[node name="bridge1" type="CSGBox3D" parent="PlatformsNode3D" unique_id=69860412]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -14.493042)
 use_collision = true
 size = Vector3(3, 1, 1)
-material = SubResource("StandardMaterial3D_lgp48")
+material = ExtResource("2_du84n")
 
-[node name="bridge2" type="CSGBox3D" parent="." unique_id=1294403683]
+[node name="bridge2" type="CSGBox3D" parent="PlatformsNode3D" unique_id=1294403683]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -20.493042)
+material_override = ExtResource("1_w28nb")
 use_collision = true
 size = Vector3(3, 1, 1)
-material = SubResource("StandardMaterial3D_lgp48")
+material = ExtResource("2_du84n")
 
-[node name="bridge3" type="CSGBox3D" parent="." unique_id=1614140555]
+[node name="bridge3" type="CSGBox3D" parent="PlatformsNode3D" unique_id=1614140555]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.5, -26.493042)
 use_collision = true
 size = Vector3(3, 1, 1)
-material = SubResource("StandardMaterial3D_lgp48")
+material = ExtResource("1_w28nb")
 
-[node name="platform2" type="CSGBox3D" parent="." unique_id=1754929961]
+[node name="bridge7" type="CSGBox3D" parent="PlatformsNode3D" unique_id=607593871]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 1, 0, 2, 0, -8.742278e-08, 15, -0.5, -40.493042)
+use_collision = true
+size = Vector3(3, 1, 1)
+material = ExtResource("1_w28nb")
+
+[node name="bridge8" type="CSGBox3D" parent="PlatformsNode3D" unique_id=929480121]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 1, 0, 2, 0, -8.742278e-08, 21, -0.5, -40.493042)
+use_collision = true
+size = Vector3(3, 1, 1)
+material = ExtResource("1_w28nb")
+
+[node name="bridge9" type="CSGBox3D" parent="PlatformsNode3D" unique_id=1469999540]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 1, 0, 2, 0, -8.742278e-08, 27, -0.5, -40.493042)
+use_collision = true
+size = Vector3(3, 1, 1)
+material = ExtResource("1_w28nb")
+
+[node name="bridge10" type="CSGBox3D" parent="PlatformsNode3D" unique_id=829448154]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 1, 0, 2, 0, -8.742278e-08, 15, -0.5, -0.493042)
+use_collision = true
+size = Vector3(3, 1, 1)
+material = ExtResource("1_w28nb")
+
+[node name="bridge11" type="CSGBox3D" parent="PlatformsNode3D" unique_id=354840762]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 1, 0, 2, 0, -8.742278e-08, 21, -0.5, -0.493042)
+use_collision = true
+size = Vector3(3, 1, 1)
+material = ExtResource("1_w28nb")
+
+[node name="bridge12" type="CSGBox3D" parent="PlatformsNode3D" unique_id=99772803]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 1, 0, 2, 0, -8.742278e-08, 27, -0.5, -0.493042)
+use_collision = true
+size = Vector3(3, 1, 1)
+material = ExtResource("1_w28nb")
+
+[node name="platform2" type="CSGBox3D" parent="PlatformsNode3D" unique_id=1754929961]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -6, -40)
 use_collision = true
 size = Vector3(8, 12, 8)
-material = SubResource("StandardMaterial3D_lgp48")
+material = ExtResource("1_w28nb")
+
+[node name="platform3" type="CSGBox3D" parent="PlatformsNode3D" unique_id=251032715]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 41, -5, 0)
+use_collision = true
+size = Vector3(8, 10, 8)
+material = ExtResource("1_w28nb")
+
+[node name="bridge4" type="CSGBox3D" parent="PlatformsNode3D" unique_id=124022993]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 41, -0.5, -14.493042)
+use_collision = true
+size = Vector3(3, 1, 1)
+material = ExtResource("1_w28nb")
+
+[node name="bridge5" type="CSGBox3D" parent="PlatformsNode3D" unique_id=27369619]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 41, -0.5, -20.493042)
+use_collision = true
+size = Vector3(3, 1, 1)
+material = ExtResource("1_w28nb")
+
+[node name="bridge6" type="CSGBox3D" parent="PlatformsNode3D" unique_id=145446022]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 41, -0.5, -26.493042)
+use_collision = true
+size = Vector3(3, 1, 1)
+material = ExtResource("1_w28nb")
+
+[node name="platform4" type="CSGBox3D" parent="PlatformsNode3D" unique_id=526568727]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 41, -6, -40)
+use_collision = true
+size = Vector3(8, 12, 8)
+material = ExtResource("1_w28nb")
 
 [node name="CharacterBody3D" parent="." unique_id=244230320 instance=ExtResource("1_cc4m7")]
